@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazmin Reyes | Diseñadora Instruccional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#e8b4cb',
+              secondary: '#333333',
+              light: '#f8f8f8',
+              dark: '#222222',
+            },
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #e8b4cb 0%, #f3d7e3 100%);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #e8b4cb;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #e8b4cb;
+      }
+
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 24px;
+        width: 2px;
+        height: calc(100% - 12px);
+        background-color: #e8b4cb;
+      }
+
+      .timeline-item:last-child::after {
+        display: none;
+      }
+
+      .skill-pill {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .skill-pill:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(232, 180, 203, 0.3);
+      }
+
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .portfolio-item {
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-3px);
+      }
+
+      .portfolio-item a {
+        color: #e8b4cb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .portfolio-item a:hover {
+        color: #c98da6;
+        text-decoration: underline;
+      }
+
+      .portfolio-tab {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-tab.active {
+        background-color: #e8b4cb;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-light text-dark">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+            <span class="text-white font-bold text-xl">YR</span>
+          </div>
+          <h1 class="text-xl font-bold">Yazmin Reyes</h1>
+        </div>
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li>
+              <a href="#inicio" class="nav-link font-medium">Inicio</a>
+            </li>
+            <li>
+              <a href="#sobre-mi" class="nav-link font-medium">Sobre mí</a>
+            </li>
+            <li>
+              <a href="#experiencia" class="nav-link font-medium">Experiencia</a>
+            </li>
+            <li>
+              <a href="#educacion" class="nav-link font-medium">Educación</a>
+            </li>
+            <li>
+              <a href="#habilidades" class="nav-link font-medium">Habilidades</a>
+            </li>
+            <li>
+              <a href="#portafolio" class="nav-link font-medium">Portafolio</a>
+            </li>
+            <li>
+              <a href="#contacto" class="nav-link font-medium">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="menu-toggle" class="md:hidden text-dark focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+        <ul class="py-4 px-4 space-y-4">
+          <li>
+            <a href="#inicio" class="block py-2 px-4 hover:bg-primary/10 rounded">Inicio</a>
+          </li>
+          <li>
+            <a href="#sobre-mi" class="block py-2 px-4 hover:bg-primary/10 rounded">Sobre mí</a>
+          </li>
+          <li>
+            <a href="#experiencia" class="block py-2 px-4 hover:bg-primary/10 rounded">Experiencia</a>
+          </li>
+          <li>
+            <a href="#educacion" class="block py-2 px-4 hover:bg-primary/10 rounded">Educación</a>
+          </li>
+          <li>
+            <a href="#habilidades" class="block py-2 px-4 hover:bg-primary/10 rounded">Habilidades</a>
+          </li>
+          <li>
+            <a href="#portafolio" class="block py-2 px-4 hover:bg-primary/10 rounded">Portafolio</a>
+          </li>
+          <li>
+            <a href="#contacto" class="block py-2 px-4 hover:bg-primary/10 rounded">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-28 pb-20 md:pt-40 md:pb-32 gradient-bg">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Yazmin Reyes</h1>
+            <h2 class="text-2xl md:text-3xl font-medium mb-6 text-white/80">Diseñadora Instruccional | Especialista en Formación y Desarrollo</h2>
+            <p class="text-lg mb-8 text-white/70 max-w-lg">  Transformando el conocimiento en experiencias de aprendizaje significativas y alineadas a los objetivos del negocio.</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#contacto" class="px-6 py-3 bg-dark text-white rounded-full font-medium hover:bg-dark/80 transition-all">Contactar</a>
+              <a href="#experiencia" class="px-6 py-3 bg-white text-dark rounded-full font-medium hover:bg-white/80 transition-all">Ver experiencia</a>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white p-3 shadow-xl">
+                        <div class="w-full h-full rounded-full overflow-hidden">
+                            <img src="https://i.pinimg.com/736x/a7/13/bf/a713bf712b840f3af03c512c3a4aa019.jpg" alt="Yazmin Reyes" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-white rounded-lg shadow-lg p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="absolute -top-4 -left-4 bg-white rounded-lg shadow-lg p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- About Section -->
+    <section id="sobre-mi" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Sobre mí</h2>
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-sm p-8 card">
+          <div class="flex items-start mb-6">
+            <div class="mr-4 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Perfil Profesional</h3>
+              <p class="text-dark/80 leading-relaxed"> Diseñadora instruccional con más de 4 años de experiencia desarrollando soluciones de aprendizaje digital en entornos corporativos. Especializada en la creación de rutas formativas por competencias, gestión de plataformas LMS, y diseño de contenidos multimedia. Apasionada por transformar el conocimiento en experiencias significativas y alineadas a los objetivos del negocio. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experiencia" class="py-20 bg-light">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Experiencia Profesional</h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+          <div class="timeline-item pb-10">
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-xl font-semibold">Coordinadora de Universidad Corporativa</h3>
+                <div class="flex items-center mt-2 md:mt-0">
+                  <span class="text-primary font-medium mr-3">Grupo Herdez</span>
+                  <span class="text-dark/60 text-sm">Mar 2023 - Actual</span>
+                </div>
+              </div>
+              <ul class="list-disc list-inside text-dark/80 space-y-2 ml-4">
+                <li>Administración de plataforma Moodle: altas, bajas, soporte y habilitación de cursos.</li>
+                <li>Generación de reportes e indicadores de avance por ruta formativa.</li>
+                <li>Diseño instruccional de materiales: cursos e-learning, manuales, infografías, guías y videos.</li>
+                <li>Creación de programas de formación y habilitación de espacios virtuales.</li>
+                <li>Mapeo e implementación de procesos de Onboarding, Crossbarding y Offboarding en SIGA-RH (SAP Success Factors).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item pb-10">
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-xl font-semibold">Analista de Formación</h3>
+                <div class="flex items-center mt-2 md:mt-0">
+                  <span class="text-primary font-medium mr-3">Grupo Herdez</span>
+                  <span class="text-dark/60 text-sm">Ago 2021 - Mar 2023</span>
+                </div>
+              </div>
+              <ul class="list-disc list-inside text-dark/80 space-y-2 ml-4">
+                <li>Administración de LMS: gestión de usuarios, incidencias y seguimiento de cursos.</li>
+                <li>Coordinación con proveedores externos para desarrollo de contenidos.</li>
+                <li>Producción de materiales instruccionales alineados a competencias.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item pb-10">
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-xl font-semibold">Analista de Formación y Desarrollo</h3>
+                <div class="flex items-center mt-2 md:mt-0">
+                  <span class="text-primary font-medium mr-3">TeCAS Holding</span>
+                  <span class="text-dark/60 text-sm">Jul 2020 - Mar 2021</span>
+                </div>
+              </div>
+              <ul class="list-disc list-inside text-dark/80 space-y-2 ml-4">
+                <li>Planificación e impartición de capacitaciones mensuales.</li>
+                <li>Seguimiento a cursos en línea y soporte a usuarios.</li>
+                <li>Diseño de contenidos educativos: guiones, videos, cursos y guías.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item pb-10">
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-xl font-semibold">Becaria de Capacitación</h3>
+                <div class="flex items-center mt-2 md:mt-0">
+                  <span class="text-primary font-medium mr-3">El Palacio de Hierro</span>
+                  <span class="text-dark/60 text-sm">Jul 2019 - Jul 2020</span>
+                </div>
+              </div>
+              <ul class="list-disc list-inside text-dark/80 space-y-2 ml-4">
+                <li>Apoyo en logística de capacitaciones y trato con proveedores.</li>
+                <li>Creación de manuales y guías paso a paso.</li>
+                <li>Seguimiento de indicadores y reportes.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item pb-10">
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-xl font-semibold">Asistente de Docencia</h3>
+                <div class="flex items-center mt-2 md:mt-0">
+                  <span class="text-primary font-medium mr-3">Particular</span>
+                  <span class="text-dark/60 text-sm">Abr 2020 - Feb 2021</span>
+                </div>
+              </div>
+              <ul class="list-disc list-inside text-dark/80 space-y-2 ml-4">
+                <li>Planeación semanal y adecuación de contenidos para primaria.</li>
+                <li>Diseño de cuadernillos personalizados para alumnos con NEE.</li>
+                <li>Docencia frente a grupo en primero y segundo grado.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-xl font-semibold">Prácticas y Servicio Social</h3>
+                <div class="flex items-center mt-2 md:mt-0">
+                  <span class="text-primary font-medium mr-3">Centros de Integración Juvenil</span>
+                  <span class="text-dark/60 text-sm">May 2017 - May 2018</span>
+                </div>
+              </div>
+              <ul class="list-disc list-inside text-dark/80 space-y-2 ml-4">
+                <li>Diseño de talleres sobre salud emocional y prevención de adicciones.</li>
+                <li>Elaboración de materiales didácticos y sesiones de capacitación.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Education Section -->
+    <section id="educacion" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Educación y Certificaciones</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div class="bg-light rounded-xl p-6 card">
+            <div class="flex items-start">
+              <div class="mr-4">
+                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Maestría en Educación</h3>
+                <p class="text-primary font-medium">Universidad Internacional de La Rioja (UNIR México)</p>
+                <p class="text-dark/60 mt-1">2021 - 2023</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-xl p-6 card">
+            <div class="flex items-start">
+              <div class="mr-4">
+                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Licenciatura en Psicología Educativa</h3>
+                <p class="text-primary font-medium">Universidad Pedagógica Nacional</p>
+                <p class="text-dark/60 mt-1">2014 - 2018</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 max-w-4xl mx-auto">
+          <h3 class="text-xl font-semibold mb-6 text-center">Certificaciones y Cursos</h3>
+          <div class="bg-light rounded-xl p-6 card">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center mr-3 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium">Curso "Principios del Diseño Instruccional para Programas a Distancia"</p>
+                  <p class="text-dark/60 text-sm">TRUPER (2021)</p>
+                </div>
+              </li>
+              <li class="flex items-center">
+                <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center mr-3 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium">Taller de Infografías Educativas</p>
+                  <p class="text-dark/60 text-sm">UPN (2016)</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20 bg-light">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Herramientas y Tecnologías</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Diseño y Multimedia</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Vyond</span>
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Genially</span>
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Canva</span>
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Animaker</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Plataformas y LMS</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Moodle</span>
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">SuccessFactors</span>
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">MS Teams</span>
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Google Meet</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm p-6 card">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Ofimática y Colaboración</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Google Suite</span>
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm skill-pill">Microsoft Office</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   <!-- Portfolio Section -->
+<section id="portafolio" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Portafolio</h2>
+        
+        <!-- Portfolio Tabs -->
+        <div class="flex flex-wrap justify-center mb-10 gap-2">
+            <button class="portfolio-tab active px-5 py-2 rounded-full text-sm md:text-base" data-tab="elearnings">E-learnings</button>
+            <button class="portfolio-tab px-5 py-2 rounded-full text-sm md:text-base" data-tab="videos">Videos</button>
+            <button class="portfolio-tab px-5 py-2 rounded-full text-sm md:text-base" data-tab="guias">Guías</button>
+            <button class="portfolio-tab px-5 py-2 rounded-full text-sm md:text-base" data-tab="infografias">Infografías</button>
+            <button class="portfolio-tab px-5 py-2 rounded-full text-sm md:text-base" data-tab="manuales">Manuales</button>
+        </div>
+        
+        <!-- Portfolio Content -->
+        <div class="max-w-5xl mx-auto">
+            <!-- E-learnings -->
+            <div id="elearnings-content" class="portfolio-content active">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://view.genially.com/685789447ac577972e8497e4/presentation-modulo-1-lideres-en-accion" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Líderes en Acción</h3>
+                            <p class="text-gray-600 text-sm">Curso de Liderazgo para coordinadores de promotoría.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://view.genially.com/685787ec113941e7720ab068/learning-experience-didactic-unit-portafoliodiyrpfp" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Finanzas Personales</h3>
+                            <p class="text-gray-600 text-sm">Curso sobre finanzas personales y bienestar económico.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://view.genially.com/685789ab2555d6b92b4cd5c6/presentation-portafoliodiyrpct" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Curso para Tutores</h3>
+                            <p class="text-gray-600 text-sm">Formación para tutores en metodologías de acompañamiento y mentoría.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://view.genially.com/685789edc1d9bc863463fa74/presentation-refrendo-cultura-de-etica-y-legalidad-2023" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Cultura de ética y legalidad</h3>
+                            <p class="text-gray-600 text-sm">Curso sobre el código de ética y cultura de legalidad intitucional.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Videos -->
+            <div id="videos-content" class="portfolio-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://drive.google.com/file/d/17u5cRedQkyz-tHyNM_V9_l8Z2q8o4Heg/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Universidad Corporativa</h3>
+                            <p class="text-gray-600 text-sm">Presentación Universidad Corporativa.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1fV24v_fIiIWsbTjvluA-mCMq4KUm9ABE/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Recorrido Universidad Corporativa</h3>
+                            <p class="text-gray-600 text-sm">Tour por la plataforma de la Universidad Corporativa.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1JfXn5o2uC49uhlXnmnHWnW8y4o7JXPK-/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Diversidad e Inclusión</h3>
+                            <p class="text-gray-600 text-sm">Video introducción sobre el curso de Diversidad e Inclusión.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1kDEldVTO4ZpXFiuUEIs5_CRqOPuKNiqb/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Registro de incidencias</h3>
+                            <p class="text-gray-600 text-sm">Tutorial sobre el proceso de registro y seguimiento de incidencias en la plataforma Talentia.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1fZZxJBZ1aSUJRJsBs5SzpxOMXr42aWFL/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Funciones de la mesa directiva</h3>
+                            <p class="text-gray-600 text-sm">Explicación de las responsabilidades y funciones de la mesa directiva.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/173ECjzxIZSFh4a-TlPZt3NnL_HWyhd4K/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Órdenes en Formiik</h3>
+                            <p class="text-gray-600 text-sm">Tutorial sobre el proceso de gestión de órdenes en el aplicativo de Formiik.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Guías -->
+            <div id="guias-content" class="portfolio-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://drive.google.com/file/d/1BFXAldUE4Nw6YirZyjr1cOltpzlurLnU/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Guía Metodología Crédito Individual</h3>
+                            <p class="text-gray-600 text-sm">Guía sobre la metodología de crédito individual.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1XdlbZOrSkFECxoG1l26qiKuzEeGF6LBp/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Actualización a Formiik new</h3>
+                            <p class="text-gray-600 text-sm">Guía con el paso a paso para la actualización del aplicativo Formiik.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1SaOnQSHwdPR5mitmqdjCCpJ8EnRUbZ3E/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Guía Gestión de CCM Virtual</h3>
+                            <p class="text-gray-600 text-sm">Guía para la gestión de Cursos de Conocimiento de Mercancía Virtual.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/17yTJXFjQRsoCcLr7PPUrRvAt5yr4yC6e/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Guía Gestión CCM</h3>
+                            <p class="text-gray-600 text-sm">Guía para la gestión de Cursos de Conocimiento de Mercancía presencial.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1aONqqcQqbqK7HiIPXKS4mqFO4LV7x2tv/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Guía de Inducción al Puesto Operativo</h3>
+                            <p class="text-gray-600 text-sm">Guía para el líder sobre la gestión de Incorporación de nuevos colaboradores para puestos operativos.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Infografías -->
+            <div id="infografias-content" class="portfolio-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://drive.google.com/file/d/1BwsxWwLAgtnT_rp0d4E8gDw0a8rIPmrz/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Corrección del especialista</h3>
+                            <p class="text-gray-600 text-sm">Infografía sobre el proceso de corrección y retroalimentación del especialista.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1m_kqU6WZCRq19cYJc-EC3K4GBMSnX9m6/view?usp=drive_link" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Resguardo de expedientes</h3>
+                            <p class="text-gray-600 text-sm">Infografía sobre el protocolo de resguardo y gestión de expedientes.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1MOjM7YbflF1piy3gAuXEs7uAnahkykhD/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">¿Por qué desayunar?</h3>
+                            <p class="text-gray-600 text-sm">Infografía sobre la importancia del desayuno para la salud.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1eW6citsDeJRsjl7maUN7ZdCPgHwe4AVh/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Herdez-harvard 1</h3>
+                            <p class="text-gray-600 text-sm">Primera infografía de la serie colaborativa de cursos virtuales entre Herdez y Harvard.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1PWjXX8fX5bjQgw1chu0JdO3ginfgv5LK/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Herdez-harvard 2</h3>
+                            <p class="text-gray-600 text-sm">Segunda infografía de la serie colaborativa de cursos virtuales entre Herdez y Harvard.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1INWL1x2Sv7NZfyk1XHIWVGLMVzkyEFsZ/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Herdez-harvard 3</h3>
+                            <p class="text-gray-600 text-sm">Tercera infografía de la serie colaborativa de cursos virtuales entre Herdez y Harvard.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1vujgjTRkybYBrGocVRHPfEUo6H1g6_SV/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Herdez-harvard 4</h3>
+                            <p class="text-gray-600 text-sm">Cuarta infografía de la serie colaborativa de cursos virtuales entre Herdez y Harvard.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Manuales -->
+            <div id="manuales-content" class="portfolio-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://drive.google.com/file/d/1xXtEW_wHQaZSeHtJ83FYAyPRvqYcTL_J/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Registro en plataforma CLIMSS</h3>
+                            <p class="text-gray-600 text-sm">Manual paso a paso para el registro y uso de la plataforma CLIMSS.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/14BnVOqXIvjTInEtYpcYPeuaPdxHV3fwG/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Bienvenido a la Familia RH</h3>
+                            <p class="text-gray-600 text-sm">Manual del proceso de Bienvenida a la Familia en SIGA-RH para el rol de Recursos Humanos.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1kj2HN3dGSCo1kS4f9GKj3JUQu5rhb_at/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Bienvenido a la Familia Jefe inmediato</h3>
+                            <p class="text-gray-600 text-sm">Manual del proceso de Bienvenida a la Familia en SIGA-RH para el rol de Jefe inmediato.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1hDiUUX-d6WYain7rMeIm847zbF-D6W_3/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Mi nuevo rol en la Familia RH</h3>
+                            <p class="text-gray-600 text-sm">Manual del proceso de Mi nuevo rol en la Familia en SIGA-RH para el rol de Recursos Humanos.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/19xlBhWIuef37iBzVAYTbeIfz2yzkBOrt/view?usp=sharing" target="_blank" class="bg-white rounded-lg shadow-md overflow-hidden portfolio-item">
+                        <div class="h-40 bg-primary bg-opacity-20 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Mi nuevo rol en la Familia Jefe inmediato</h3>
+                            <p class="text-gray-600 text-sm">Manual del proceso de Mi nuevo rol en la Familia en SIGA-RH para el rol de Jefe inmediato.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contacto" class="py-20 gradient-bg">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-10">
+            <h2 class="text-3xl font-bold mb-8 text-center">Contacto</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6 md:col-span-2">
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Email</h3>
+                            <p class="text-gray-700">yazz.reyesperez@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Teléfono</h3>
+                            <p class="text-gray-700">55 51 76 07 18</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Ubicación</h3>
+                            <p class="text-gray-700">Ciudad de México</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Disponibilidad</h3>
+                            <p class="text-gray-700">Actualmente con empleo. Puedo incorporarme con transición laboral programada | Modalidad presencial, híbrida o remota</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl font-bold mb-4">Yazmin Reyes</h2>
+        <p class="mb-6">Diseñadora Instruccional | Especialista en Formación y Desarrollo</p>
+        <p class="text-gray-400 text-sm">&copy; 2025 Yazmin Reyes. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.portfolio-tab');
+    const contents = document.querySelectorAll('.portfolio-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                tabs.forEach(t => {
+          t.classList.remove('active');
+          t.classList.add('bg-gray-200');
+        });
+
+        // Hide all content
+        contents.forEach(c => c.classList.add('hidden'));
+
+        // Activate the selected tab
+        tab.classList.add('active');
+        tab.classList.remove('bg-gray-200');
+
+        // Show corresponding content
+        const content = document.getElementById(`${target}-content`);
+        if (content) {
+          content.classList.remove('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
